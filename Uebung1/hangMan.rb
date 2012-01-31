@@ -7,7 +7,7 @@ incorrects = 0
 maxIncorrects = 4
 result = "";
 word.size.times{result = result + "_"}
-puts "Bitte geben Sie einen Wort ein!"
+puts "Bitte geben Sie einen Buchstaben ein."
 
 while (incorrects < maxIncorrects)
  guess = gets
