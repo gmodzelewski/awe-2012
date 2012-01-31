@@ -8,12 +8,14 @@ result = "";
 puts "Willkommen bei Hangman. Sie haben insgesamt #{maxIncorrects} Versuche zur Verfuegung. \n Bitte geben Sie das Wort ein, was zu loesen ist:"
 word = gets
 word.chop!
+word.upcase!
 word.size.times{result = result + "_"}
 puts "Bitte geben Sie einen Buchstaben ein. \n"
 
 while (incorrects < maxIncorrects)
  guess = gets
  guess.chop!
+ guess.upcase!
  y = 0
  isInside = false
  word.each_char do |pos|
