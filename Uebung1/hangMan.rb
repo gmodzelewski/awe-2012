@@ -35,6 +35,6 @@ while (incorrects < maxIncorrects)
  print  "Sie haben noch ",maxIncorrects-incorrects," Versuche"
 end
 
-puts "You loose!!!"
+puts "Sie haben leider nicht gewonnen. Es tut mir leid"
 exit
 
