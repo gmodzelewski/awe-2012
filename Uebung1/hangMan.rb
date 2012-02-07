@@ -4,14 +4,14 @@ incorrects = 0
 max_incorrects = 5
 result = ""
 
-puts "Willkommen bei Hangman. Sie haben insgesamt #{max_incorrects} Versuche zur Verfuegung."
+puts "Welcome to HANGMAN!. You have #{ max_incorrects } false attempts."
 
-word = File.open('/usr/share/dict/words').readlines.sample.chomp.upcase
+word = File.open( '/usr/share/dict/words' ).readlines.sample.chomp.upcase
 word.size.times { result += "_" }
 
-puts "Bitte geben Sie einen Buchstaben ein. #{result}"
+puts "Please enter a letter.\n#{result}"
 
-while (incorrects < max_incorrects)
+while ( incorrects < max_incorrects )
  guess = gets.chomp.upcase
  
  y = 0
@@ -25,21 +25,19 @@ while (incorrects < max_incorrects)
  end
 
  if !is_inside
-   incorrects = incorrects + 1
+   incorrects += 1
  end
 
  if result == word
-   puts "Sie haben gewonnen!"
+   puts "YOU WON!"
    exit
  end
 
  puts result
  remaining = max_incorrects - incorrects
- puts remaining
  
- puts  "Sie haben noch #{remaining} Versuche"
+ puts "#{ remaining } remaining shots...\n"
 end
 
-puts "Sie haben leider nicht gewonnen. Hangover!"
+puts "YOU LOST! Hangover! Correct would have been: #{ word }"
 exit
-
