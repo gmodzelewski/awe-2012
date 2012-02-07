@@ -11,7 +11,7 @@ word.size.times { result += "_" }
 
 puts "Please enter a letter.\n#{result}"
 
-while ( incorrects < max_incorrects )
+while incorrects < max_incorrects
  guess = gets.chomp.upcase
  
  y = 0
