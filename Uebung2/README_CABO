@@ -1,5 +1,6 @@
 Hallo Carsten,
 
 für die erste Aufgabe (das Refactoring des Codes) haben wir unser ursprüngliches Programm Hangman verwendet (hangman.rb).
+
 Für die zweite Aufgabe haben wir uns ein anderes Beispiel ausgesucht. Hierbei handelt es sich um die Berechnung des größten gemeinsamen Teilers zweier Zahlen.
-Die Entscheidung hierfür ist gefallen, da unserer Meinung nach hier gut getestet werden kann. :) (gcd.rb).
+Die Entscheidung hierfür ist gefallen, da unserer Meinung nach hier gut getestet werden kann. :) (gcd_user_input.rb für nette Konsoleneingaben, gcd.rb enthält die eigentliche Funktion, gcd_test.rb enthält die tests).
