@@ -7,13 +7,9 @@ result = ""
 puts "Willkommen bei Hangman. Sie haben insgesamt #{max_incorrects} Versuche zur Verfuegung."
 
 word = File.open('/usr/share/dict/words').readlines.sample.chomp.upcase
-word.size.times { result += "_" } 
+word.size.times { result += "_" }
 
-puts result
-
-
-puts word
-puts "Bitte geben Sie einen Buchstaben ein."
+puts "Bitte geben Sie einen Buchstaben ein. #{result}"
 
 while (incorrects < max_incorrects)
  guess = gets.chomp.upcase
