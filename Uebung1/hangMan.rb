@@ -4,15 +4,12 @@ incorrects = 0
 max_incorrects = 5
 result = ""
 
-puts "Willkommen bei Hangman. Sie haben insgesamt #{max_incorrects} Versuche zur Verfuegung. \n Bitte geben Sie das Wort ein, was zu loesen ist:"
-word = gets
-word.chomp!
-word.upcase!
-word.size.times{result = result + "_"}
-puts "Bitte geben Sie einen Buchstaben ein. \n"
+puts "Willkommen bei Hangman. Sie haben insgesamt #{max_incorrects} Versuche zur Verfuegung."
 
-word = File.sample('/usr/share/dict/words')
+word = File.open('/usr/share/dict/words').readlines.sample.chomp.upcase
 puts word
+
+puts "Bitte geben Sie einen Buchstaben ein. \n"
 
 while (incorrects < max_incorrects)
  guess = gets
