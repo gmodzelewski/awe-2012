@@ -1,8 +1,5 @@
 class GCD
 
-num0 = ARGV[0]
-num1 = ARGV[1]
-
 	def greatest_common_divisor(num0, num1)
     return false if !(num0.is_a? Integer)
     return false if !(num1.is_a? Integer)
