@@ -1,32 +1,34 @@
 #hangMan.rb
 
-
 incorrects = 0
-maxIncorrects = 5
-result = "";
+max_incorrects = 5
+result = ""
 
-puts "Willkommen bei Hangman. Sie haben insgesamt #{maxIncorrects} Versuche zur Verfuegung. \n Bitte geben Sie das Wort ein, was zu loesen ist:"
+puts "Willkommen bei Hangman. Sie haben insgesamt #{max_incorrects} Versuche zur Verfuegung. \n Bitte geben Sie das Wort ein, was zu loesen ist:"
 word = gets
-word.chop!
+word.chomp!
 word.upcase!
 word.size.times{result = result + "_"}
 puts "Bitte geben Sie einen Buchstaben ein. \n"
 
-while (incorrects < maxIncorrects)
+word = File.sample('/usr/share/dict/words')
+puts word
+
+while (incorrects < max_incorrects)
  guess = gets
- guess.chop!
+ guess.chomp!
  guess.upcase!
  y = 0
- isInside = false
+ is_inside = false
  word.each_char do |pos|
     if pos == guess
        result[y] = pos
-       isInside = true
+       is_inside = true
     end
     y += 1
  end
 
- if !isInside
+ if !is_inside
    incorrects = incorrects+1
  end
 
@@ -36,7 +38,7 @@ while (incorrects < maxIncorrects)
  end
 
  puts result
- print  "Sie haben noch ",maxIncorrects-incorrects," Versuche \n"
+ puts  "Sie haben noch ",max_incorrects-incorrects," Versuche \n"
 end
 
 puts "Sie haben leider nicht gewonnen. Es tut mir leid"
